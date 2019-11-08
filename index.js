@@ -72,7 +72,7 @@ module.exports = {
           await next();
 
           const isJSONCanRender = ctx.accepts(['html'])
-            && /\*/.test(ctx.get('accept'))
+            && !/^\*(\/\*)?$/.test(ctx.get('accept'))
             && (!SEC_FETCH_MODE || SEC_FETCH_MODE === 'navigate') // https://w3c.github.io/webappsec-fetch-metadata/
             && ctx.get('x-requested-with') !== 'XMLHttpRequest'
             && ctx.response.is('json');
