@@ -1,0 +1,45 @@
+{
+  "name": "svrx-plugin-json-viewer",
+  "version": "1.0.0",
+  "description": "The svrx plugin for json-viewer",
+  "main": "index.js",
+  "keywords": [
+    "svrx",
+    "svrx-plugin",
+    "json-viewer"
+  ],
+  "engines": {
+    "svrx": "^1.0.0"
+  },
+  "author": "leeluolee <87399126@163.com>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "webpack",
+    "dev": "webpack -w --config webpack.config.js --mode development"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@svrx/eslint-config": "^1.0.0",
+    "babel-loader": "^8.0.5",
+    "eslint": "^6.2.0",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-json-view": "^1.19.1",
+    "requireg": "^0.2.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix"
+  },
+  "license": "MIT"
+}
