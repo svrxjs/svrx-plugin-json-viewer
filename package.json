@@ -1,6 +1,6 @@
 {
   "name": "svrx-plugin-json-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The svrx plugin for json-viewer",
   "main": "index.js",
   "keywords": [
