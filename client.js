@@ -19,6 +19,7 @@ const app = document.getElementById('app-entry');
 
 config.get().then((obj)=>{
     const config = {
+        name: false,
         src: window.__JSON_VIEW_OBJECT__,
         theme: obj.theme,
         collapsed: obj.collapsed,

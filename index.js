@@ -71,6 +71,7 @@ module.exports = {
           const SEC_FETCH_MODE = ctx.request.header['sec-fetch-mode'];
           await next();
 
+
           const isJSONCanRender = ctx.accepts(['html'])
             && !/^\*(\/\*)?$/.test(ctx.get('accept'))
             && (!SEC_FETCH_MODE || SEC_FETCH_MODE === 'navigate') // https://w3c.github.io/webappsec-fetch-metadata/
@@ -80,7 +81,8 @@ module.exports = {
 
           if (isJSONCanRender) {
             ctx.type = 'html';
-            ctx.body = JSON_VIEWER_BODY.replace('{0}', JSON.stringify(ctx.body));
+            const body = (Buffer.isBuffer(ctx.body) || typeof ctx.body==='string')? ctx.body.toString(): JSON.stringify(ctx.body)
+            ctx.body = JSON_VIEWER_BODY.replace('{0}', body);
           }
         },
       });
