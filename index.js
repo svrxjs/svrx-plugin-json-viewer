@@ -81,7 +81,7 @@ module.exports = {
 
           if (isJSONCanRender) {
             ctx.type = 'html';
-            const body = (Buffer.isBuffer(ctx.body) || typeof ctx.body==='string')? ctx.body.toString(): JSON.stringify(ctx.body)
+            const body = (Buffer.isBuffer(ctx.body) || typeof ctx.body === 'string') ? ctx.body.toString() : JSON.stringify(ctx.body);
             ctx.body = JSON_VIEWER_BODY.replace('{0}', body);
           }
         },
